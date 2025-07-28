@@ -207,7 +207,7 @@
 
       when: "nvm_install == 'git'"
 
-    - name: Check NVM Version # noqa 305
+    - name: Check NVM Version # noqa command-instead-of-shell
       ansible.builtin.shell: "{{ mg_user_shell.command + ' \"nvm --version\"' }}"
       register: mg_nvm_version_response
       changed_when: "mg_nvm_version_response.rc != 0"
